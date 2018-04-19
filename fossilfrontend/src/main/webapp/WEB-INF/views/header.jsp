@@ -69,6 +69,7 @@
 					   <a href='<c:url value="/all/searchbycategory?searchCondition=All"></c:url>'>All</a>
                     </li>
 			</ul>
+			<li><a href='<c:url value="/all/registrationform"></c:url>'>Sign Up</a></li>
 			</li>
 			</ul>
 			</div>
