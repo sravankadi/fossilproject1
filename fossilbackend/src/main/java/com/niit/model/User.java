@@ -1,10 +1,12 @@
 package com.niit.model;
 
-
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 @Entity
 public class User {
@@ -16,6 +18,8 @@ private boolean enabled;
 private Customer customer;
 @OneToOne(mappedBy="user",cascade=CascadeType.ALL)
 private Authorities authorities;
+@OneToMany(mappedBy="user")
+private List<CartItem> cartItems;
 public User(){
 	System.out.println("User object is created");
 }
