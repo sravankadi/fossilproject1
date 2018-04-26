@@ -6,6 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.dao.CartItemDao;
 import com.niit.model.CartItem;
+import com.niit.model.CustomerOrder;
 import com.niit.model.User;
 @Service
 public class CartItemServiceImpl implements CartItemService{
@@ -22,6 +23,10 @@ private CartItemDao cartItemDao;
    
 	public User getUser(String email) {
 		return cartItemDao.getUser(email);
+	}
+
+	public CustomerOrder createOrder(User user) {
+		return cartItemDao.createOrder(user);
 	}
 
 }

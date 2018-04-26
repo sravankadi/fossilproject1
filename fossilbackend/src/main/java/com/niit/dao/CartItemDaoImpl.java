@@ -1,5 +1,6 @@
 package com.niit.dao;
 
+import java.util.Date;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.model.CartItem;
+import com.niit.model.CustomerOrder;
 import com.niit.model.User;
 @Repository
 @Transactional
@@ -37,7 +39,20 @@ private SessionFactory sessionFactory;
 	}
 
 	
-//	CustomerOrder createOrder(User user){
-//		
-//	}
+	public CustomerOrder createOrder(User user){
+       Session session=sessionFactory.getCurrentSession();
+       CustomerOrder customerOrder=new CustomerOrder();
+       customerOrder.setPurchaseDate(new Date());
+       
+       List<CartItem> cartItems=user.getCartItems();
+       double grandTotal=0;
+       for(CartItem cartItem:cartItems){//For each CartItem in list of cartitems
+    	   grandTotal=grandTotal+cartItem.getTotalPrice();
+       }
+       customerOrder.setGrandTotal(grandTotal);
+       customerOrder.setUser(user);
+       session.save(customerOrder);//->user -> customer -> shippingaddress
+       return customerOrder;
+	}
 }
+

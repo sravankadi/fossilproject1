@@ -6,8 +6,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import com.niit.model.Authorities;
 import com.niit.model.BillingAddress;
 import com.niit.model.Cart;
+import com.niit.model.CartItem;
 import com.niit.model.Category;
 import com.niit.model.Customer;
+import com.niit.model.CustomerOrder;
 import com.niit.model.Product;
 import com.niit.model.ShippingAddress;
 import com.niit.model.User;
@@ -22,7 +24,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 
-
 @Configuration
 @EnableTransactionManagement   //commit / rollback
 public class DBConfiguration {
@@ -30,11 +31,13 @@ public class DBConfiguration {
 	
 	@Bean(name="dataSource")
 	public DataSource getDataSource() {
+		System.out.println("Entering DataSource Bean creation method ");
 	    BasicDataSource dataSource = new BasicDataSource();
 	    dataSource.setDriverClassName("org.h2.Driver");
 	    dataSource.setUrl("jdbc:h2:tcp://localhost/~/sravan");
 	    dataSource.setUsername("sa");
 	    dataSource.setPassword("");
+	    System.out.println("DataSource bean " +dataSource);
 	    return dataSource;
 	}
 	/*
@@ -43,6 +46,7 @@ public class DBConfiguration {
 	 */
 	@Bean //SessionFactory - factory of session objects
 	public SessionFactory sessionFactory() {
+		System.out.println("Entering sessionFactory creation method");
 		LocalSessionFactoryBuilder lsf=
 				new LocalSessionFactoryBuilder(getDataSource());
 		Properties hibernateProperties=new Properties();
@@ -53,8 +57,9 @@ public class DBConfiguration {
 		lsf.addProperties(hibernateProperties);
 		//An array of Class objects of all the entities
 		//Map all entities to relational table
-		Class classes[]=new Class[]{Product.class,Category.class,Authorities.class,BillingAddress.class,Cart.class,Customer.class,ShippingAddress.class,User.class};
+		Class classes[]=new Class[]{CustomerOrder.class,CartItem.class,Product.class,Category.class,Customer.class,User.class,Authorities.class,BillingAddress.class,ShippingAddress.class,Cart.class};
 		//localsesionfactorybuilder -> sessionfactory -> map all entities with relation table
+		System.out.println("SessionFactory bean " + lsf);
 	    return lsf.addAnnotatedClasses(classes).buildSessionFactory();
 	}
 	@Bean
@@ -62,3 +67,9 @@ public class DBConfiguration {
 		return new HibernateTransactionManager(sessionFactory());
 	}
 }
+
+
+
+
+
+

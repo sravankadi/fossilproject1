@@ -14,11 +14,11 @@ public class User {
 private String email;
 private String password;
 private boolean enabled;
-@OneToOne(mappedBy="user")
+@OneToOne(mappedBy="user",cascade=CascadeType.ALL)
 private Customer customer;
 @OneToOne(mappedBy="user",cascade=CascadeType.ALL)
 private Authorities authorities;
-@OneToMany(mappedBy="user")
+@OneToMany(mappedBy="user",fetch=FetchType.EAGER)
 private List<CartItem> cartItems;
 public User(){
 	System.out.println("User object is created");
@@ -52,6 +52,13 @@ public Authorities getAuthorities() {
 }
 public void setAuthorities(Authorities authorities) {
 	this.authorities = authorities;
+}
+public List<CartItem> getCartItems() {
+	
+	return cartItems;
+}
+public void setCartItems(List<CartItem> cartItems) {
+	this.cartItems = cartItems;
 }
 
 }
