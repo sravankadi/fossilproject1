@@ -57,7 +57,7 @@ public class DBConfiguration {
 		lsf.addProperties(hibernateProperties);
 		//An array of Class objects of all the entities
 		//Map all entities to relational table
-		Class classes[]=new Class[]{CustomerOrder.class,CartItem.class,Product.class,Category.class,Customer.class,User.class,Authorities.class,BillingAddress.class,ShippingAddress.class,Cart.class};
+		Class classes[]=new Class[]{Product.class,Category.class,User.class,Authorities.class,Customer.class,CartItem.class,Cart.class,ShippingAddress.class,BillingAddress.class,CustomerOrder.class};
 		//localsesionfactorybuilder -> sessionfactory -> map all entities with relation table
 		System.out.println("SessionFactory bean " + lsf);
 	    return lsf.addAnnotatedClasses(classes).buildSessionFactory();
@@ -67,9 +67,3 @@ public class DBConfiguration {
 		return new HibernateTransactionManager(sessionFactory());
 	}
 }
-
-
-
-
-
-
