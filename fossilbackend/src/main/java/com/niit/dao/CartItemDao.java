@@ -6,7 +6,10 @@ import com.niit.model.User;
 
 public interface CartItemDao {
 	void saveOrUpdateCartItem(CartItem cartItem);
+
 	void removeCartItem(int cartItemId);
-    User getUser(String email);
+
+	User getUser(String email);
+
 	CustomerOrder createOrder(User user);
 }
