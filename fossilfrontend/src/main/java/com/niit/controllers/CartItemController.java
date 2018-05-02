@@ -98,8 +98,8 @@ public class CartItemController {
 			@ModelAttribute ShippingAddress shippingaddress, Model model, HttpSession session) {
 		User user = cartItemService.getUser(principal.getName());
 		Customer customer = user.getCustomer();
-		customer.setShippingaddress(shippingaddress);// updated shippingaddress
-														// if it is updated.
+		customer.setShippingaddress(shippingaddress);
+														
 		user.setCustomer(customer);
 		List<CartItem> cartItems = user.getCartItems();
 		for (CartItem cartItem : user.getCartItems()) {

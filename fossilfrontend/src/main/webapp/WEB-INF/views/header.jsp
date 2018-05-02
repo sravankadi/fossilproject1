@@ -41,15 +41,17 @@
 			<span class="icon-bar"></span> <span class="icon-bar"></span>
 		</button>
 		<div class="navbar-header">
-			
+
 			<a class="navbar-brand" href=""> <img
-				src='<c:url value="/resources/images/fossil logo.png" ></c:url>'
-				alt="NIIT" height="30px" width="120px"></a>
+				src='<c:url value="/resources/images/logo.png" ></c:url>' alt="NIIT"
+				height="30px" width="120px"></a>
 		</div>
 		<div class="collapse navbar-collapse" id="collapse-example">
 			<ul class="nav navbar-nav" id="links">
 				<li><a href='<c:url value="/"></c:url>'>Home</a></li>
-				<li><a href='<c:url value="https://www.tatacliq.com/que/brief-history-time-fossil-watches/"></c:url>'>About Us</a></li>
+				<li><a
+					href='<c:url value="https://www.tatacliq.com/que/brief-history-time-fossil-watches/"></c:url>'>About
+						Us</a></li>
 				<!-- value is for DispatcherServlet
 				DispatcherServlet using the value it has to find the handler method which can handle the request
 				http://localhost:8080/project1frontend/all/getproducts -> DispatcherServlet -> /all/getproducts

@@ -17,57 +17,42 @@ public class modeltestcase {
 	@Autowired
 	static ProductDao productDao;
 
-	
 	@BeforeClass
-	public static void initialize()
-	{
+	public static void initialize() {
 		context = new AnnotationConfigApplicationContext();
 		context.scan("com.niit");
 		context.refresh();
-		
-		//get the productDAO from context
-		productDao =  (ProductDao) context.getBean("productDao");
-		
-			
-	}
-	
-	@Test
-	public void createProductTestCase()
-	{
-		Product product=new Product();
-		
-		product.setProductname("InFinix");
-		product.setProductdescription("  Not GOOD");
-		product.setQuantity(1);
-		product.setPrice(9000);
-		
+		productDao = (ProductDao) context.getBean("productDao");
 
-	//product.setCategory((Category).valueOf(100));
+	}
+
+	@Test
+	public void createProductTestCase() {
+		Product product = new Product();
+
+		product.setProductname("Fossil Analog Watch	");
+		product.setProductdescription("GOOD");
+		product.setQuantity(1);
+		product.setPrice(9999);
+
 		productDao.saveOrUpdateProduct(product);
 
-		assertEquals(product.getId(),product.getId());
-		
+		assertEquals(product.getId(), product.getId());
+
 	}
 	/*
-	@Test
-	public void listAllProductTestCase()
-	{
-		int actualSize = productDao.getAllProducts().size();
-		assertEquals(4, actualSize);
-	} 
-
-
-	@Test
-	public void deleteProductTestCase()
-	{
-		Product product=new Product();
-		
-
-		productDao.deleteProduct(35);
-
-		assertEquals(product.getId(),product.getId());
-		
-	}
-	*/
-
+	 * @Test public void listAllProductTestCase() { int actualSize =
+	 * productDao.getAllProducts().size(); assertEquals(4, actualSize); }
+	 * 
+	 * 
+	 * @Test public void deleteProductTestCase() { Product product=new
+	 * Product();
+	 * 
+	 * 
+	 * productDao.deleteProduct(35);
+	 * 
+	 * assertEquals(product.getId(),product.getId());
+	 * 
+	 * }
+	 */
 }

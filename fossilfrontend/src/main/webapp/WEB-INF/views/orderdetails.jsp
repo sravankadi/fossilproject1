@@ -93,14 +93,10 @@
 								</tbody>
 							</table>
 
+				<p><h4>Thanks For Order.....Keep Shopping</h4></p>
 						</div>
-
-
-
 					</div>
-
 				</div>
-
 			</form:form>
 		</div>
 	</div>

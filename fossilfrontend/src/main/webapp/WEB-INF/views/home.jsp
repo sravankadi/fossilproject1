@@ -11,7 +11,6 @@
 <body>
 	<div class="container-fluid">
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
-			<!-- Indicators -->
 			<ol class="carousel-indicators">
 				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 				<li data-target="#myCarousel" data-slide-to="1"></li>
@@ -42,27 +41,24 @@
 				</div>
 				<div class="item">
 					<img class="third-slide home-image "
-						src='<c:url value="/resources/images/041618_CC_FJ_WATCHES_VP_FOSSIL_BRAND_SHOP_Featbnr_02_1312295.png"></c:url>'
+						src='<c:url value="/resources/images/third slide.png"></c:url>'
 						alt="Third slide" height="100%" width="100%">
 					<div class="container">
 					</div>
 				</div>
 				<div class="item">
-					<!-- mvc:resources /resources/**  -> /WEB-INF/resources -->
 					<img class="forth-slide home-image "
-						src='<c:url value="/resources/images/fossil-mens-42mm-machine-black-ip-stainless-steel-dress-watch.jpg"></c:url>'
+						src='<c:url value="/resources/images/slide4.jpg"></c:url>'
 						alt="forth slide" height="100%" width="100%">
 				</div>
 				<div class="item">
-					<!-- mvc:resources /resources/**  -> /WEB-INF/resources -->
 					<img class="fifth-slide home-image "
-						src='<c:url value="/resources/images/d0e7310d4f8230dc4e974e964cf26d2a.jpg"></c:url>'
+						src='<c:url value="/resources/images/fifht slide.jpg"></c:url>'
 						alt="fifth slide" height="100%" width="100%">
 					<div class="container">
 					</div>
 				</div>
 				<div class="item">
-					<!-- mvc:resources /resources/**  -> /WEB-INF/resources -->
 					<img class="sixth-slide home-image "
 						src='<c:url value="/resources/images/watch.jpg"></c:url>'
 						alt="sixth slide" height="100%" width="100%">
@@ -81,7 +77,6 @@
 				class="sr-only">Next</span>
 			</a>
 		</div>
-		<!-- /.carousel -->
 
 	</div>
 </body>
